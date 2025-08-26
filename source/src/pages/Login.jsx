@@ -24,6 +24,7 @@ const handleSubmit = (e) => {
     return;
   }
   setIsLoggedIn(true)
+  localStorage.setItem('name',formData.firstName)
   setError('');
   navigate('/', { state: { name: formData.firstName } });
 

@@ -6,6 +6,7 @@ import Home from "./pages/Home.jsx";
 import ProtectedRoute from "./pages/ProtectedRoute.jsx";
 import ProductDetails from "./pages/ProductDetails.jsx";
 import  ProductProvider from "./provider/ProductProvider.jsx";
+import Footer from "./component/Footer.jsx";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -29,6 +30,7 @@ function App() {
           />
           <Route path="/productDetails/:id" element={<ProductDetails />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </ProductProvider>
   );
