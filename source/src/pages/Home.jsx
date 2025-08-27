@@ -40,6 +40,7 @@ const Home = () => {
              className='w-full px-8 p-2 border border-gray-300 rounded-full outline-none'
              />
            
+            
              <button type='submit' className='bg-blue-400 text-white font-semibold mx-auto rounded-r-full p-2  '>search</button>
           </form>
         </div>
