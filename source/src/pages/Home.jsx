@@ -39,8 +39,6 @@ const Home = () => {
              onChange={handleChange}
              className='w-full px-8 p-2 border border-gray-300 rounded-full outline-none'
              />
-           
-            
              <button type='submit' className='bg-blue-400 text-white font-semibold mx-auto rounded-r-full p-2  '>search</button>
           </form>
         </div>
@@ -51,14 +49,10 @@ const Home = () => {
         <div  key={product.id} className='border border-[#e4e4e4] h-[300px] flex flex-col justify-center items-center  gap-2 rounded-sm p-2 md:p-4 lg:p-6'>
           <p className='font-semibold text-slate-900 '>{product.title}</p>
           <img src={product.image} alt='' className='w-40 h-40 content-around'/>
-          
           <p className='text-sm mt-1 text-slate-500 flex justify-start'>Price: ${product.price}</p> </div>
         </Link>)
-        
-     
       })}
       </div>
-      
        </div>)
   )
 }

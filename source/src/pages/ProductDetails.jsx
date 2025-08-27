@@ -19,9 +19,7 @@ const ProductDetails = () => {
     )
   }
 
-const { image, title, description,  price, category } = product;
-
-
+  const { image, title, description,  price, category } = product;
 
   return (
     <div className="p-4 flex flex-col border border-slate-400 justify-center items-center h-screen">

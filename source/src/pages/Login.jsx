@@ -27,11 +27,7 @@ const handleSubmit = (e) => {
   localStorage.setItem('name',formData.firstName)
   setError('');
   navigate('/', { state: { name: formData.firstName } });
-
- 
 };
-
-
   return (
     <div className='grid grid-cols-2 gap-10 sm:m-6 md:m-12 lg:m-24 text-red-500-2 min-h-screen  '>
       <div className='border rounded w-full p-6 md:p-12 lg:p-18 flex  flex-col item-center justify-center gap-6 md:gap-12 shadow-lg'>
@@ -47,7 +43,6 @@ const handleSubmit = (e) => {
              <span className='text-red-500'>*</span>
              <label className='text-slate-600'>FirstName</label> 
             </div>
-            
             <input 
              type='text'
              name="firstName"
@@ -55,14 +50,12 @@ const handleSubmit = (e) => {
              onChange={handleChange}
              className='border border-slate-400 rounded px-2 md:py-1.2 lg:py-2'/>
              {error && <p className='text-red'>error</p>}
-            
           </div>
           <div  className='flex flex-col  w-full gap-4 md:gap-2'>
             <div className='flex justify-start gap-2'>
               <span className='text-red-500'>*</span> 
               <label className='text-slate-600'>LastName</label>
             </div>
-           
             <input
              type='text'
              name='lastName'
@@ -87,13 +80,11 @@ const handleSubmit = (e) => {
             {!isValidPhoneNumber && <p className='text-red-500'>please insert valid phone number</p>}
           </div>
           <div>
-            
            <button
             className='bg-blue-500 text-white hover:bg-blue-800 py-4 w-full font-medium rounded-lg' 
             type="submit" >LOGIN</button>
           </div>
-          </div>
-          
+          </div>  
         </form>
       </div>
       </div>
