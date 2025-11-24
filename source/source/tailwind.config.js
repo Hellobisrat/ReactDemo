@@ -16,17 +16,7 @@ module.exports = {
           '50%': { color: 'blue' },
           '100%':{transform:'translateX(-100%)'},
         }
-       },
-        fontFamily: {
-        garamond: ['EB Garamond', 'serif'],
-        inter: ['Inter', 'sans-serif'],
-        nunito: ['Nunito', 'sans-serif'],
-        outfit: ['Outfit', 'sans-serif'],
-        prata: ['Prata', 'serif'],
-        robotoSerif: ['Roboto Serif', 'serif'],
-        roboto: ['Roboto', 'sans-serif'],
-      },
-
+       }
     },
   },
   plugins: [],

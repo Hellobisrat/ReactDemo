@@ -1,6 +1,5 @@
 import {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
-import {LogIn} from 'lucide-react';
 
 
 const Login = ({setIsLoggedIn}) => {
@@ -32,8 +31,7 @@ const handleSubmit = (e) => {
   return (
     <div className='grid grid-cols-3 gap-10 sm:m-6 md:m-12 lg:m-24 text-red-500-2 min-h-screen  '>
       <div className='border rounded col-span-2 w-full p-6 md:p-12 lg:p-18 flex  flex-col item-center justify-center gap-6 md:gap-12 shadow-lg'>
-      <div className='flex items-center justify-center w-60 h-60 rounded-full hover:bg-pink-50 mx-auto'><LogIn className='w-40 h-40 text-purple-300 hover:text-purple-500 hover:scale-140 flex items-center justify-center '/></div> 
-       <h1 className='text-sm md:text-lg lg:text-xl text-slate-700 font-roboto font-semibold'> Welcome to the login page.</h1>
+       <h1 className='text-sm md:text-lg lg:text-xl text-slate-700'> Welcome to the login page.</h1>
        <p className='text-slate-600'>Please enter your first name, last name, and phone number in the format shown in the placeholders.</p> 
        <p className='text-blue-500'>Once submitted, you'll be redirected to the home page</p> 
       </div>

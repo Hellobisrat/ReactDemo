@@ -34,3 +34,9 @@ setup.log
 
 # Local OPAM switch
 _opam/
+
+
+node_modules/
+.env
+dist/
+.DS_Store

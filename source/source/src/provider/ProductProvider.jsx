@@ -13,7 +13,7 @@ export const productContext = createContext();
       try {
         const response = await fetch('https://fakestoreapi.com/products');
         const data = await response.json();
-        setProducts(data || data.data);
+        setProducts(data);
       } catch (err) {
         setError('Failed to fetch products');
       } finally {

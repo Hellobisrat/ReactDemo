@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -21,3 +22,41 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+=======
+*.annot
+*.cmo
+*.cma
+*.cmi
+*.a
+*.o
+*.cmx
+*.cmxs
+*.cmxa
+
+# Files containing detailed information about the compilation (generated
+# by `ocamlc`/`ocamlopt` when invoked using the option `-bin-annot`).
+# These files are typically useful for code inspection tools
+# (e.g. Merlin).
+*.cmt
+*.cmti
+
+# ocamlbuild and Dune default working directory
+_build/
+
+# ocamlbuild targets
+*.byte
+*.native
+
+# oasis generated files
+setup.data
+setup.log
+
+# Merlin configuring file for Vim and Emacs
+.merlin
+
+# Dune generated files
+*.install
+
+# Local OPAM switch
+_opam/
+>>>>>>> 0202a056cb30d55861360b439ff985cb02c3cda8
