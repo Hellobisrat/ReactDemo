@@ -1,0 +1,68 @@
+0000000000000000000000000000000000000000 fbb750f9608043c0cfa7690eef13ef0a800f90dd Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1756079320 -0500	clone: from github.com:Hellobisrat/ReactDemo.git
+fbb750f9608043c0cfa7690eef13ef0a800f90dd 4f9637e778af23c312af1048a337a59680c3c3a1 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1756158316 -0500	commit: most frame work completed
+4f9637e778af23c312af1048a337a59680c3c3a1 d7756eb13a5937523a1ff47c07e8665fa17240b3 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1756240919 -0500	commit: major parts of the page completed
+d7756eb13a5937523a1ff47c07e8665fa17240b3 2dcc7648fa2816716a0798d4beab13e9d4fcb92d Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1756244792 -0500	commit: some modification
+2dcc7648fa2816716a0798d4beab13e9d4fcb92d 65e239ea0a04ffc9617f00bcfef84d3e442eccb6 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1756323237 -0500	commit: read me added
+65e239ea0a04ffc9617f00bcfef84d3e442eccb6 263de8fe272a93de8312865fc7ee0327035efe27 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1756324025 -0500	commit: final touch
+263de8fe272a93de8312865fc7ee0327035efe27 0a49a8ddd1b2d626d26a109217db34d1792d13fe Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1756324175 -0500	commit: read me
+0a49a8ddd1b2d626d26a109217db34d1792d13fe 0202a056cb30d55861360b439ff985cb02c3cda8 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1759504087 -0500	commit: Loading page added
+0202a056cb30d55861360b439ff985cb02c3cda8 fdfb7e4d006ff24e6b24c98a772a7b1d90ea1b9c Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1764008311 -0600	commit: change in loading page
+fdfb7e4d006ff24e6b24c98a772a7b1d90ea1b9c 0803c7246b5c661d1187a3865862706fc482f9d2 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1777998571 -0500	commit: remove duplicated demo
+0803c7246b5c661d1187a3865862706fc482f9d2 ee57cc21552ae891c4452099893fedfe1959e364 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778006484 -0500	commit: folder structrure updated
+ee57cc21552ae891c4452099893fedfe1959e364 123b6888cadafbd2b5597f2501890b3dba852d7e Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778006514 -0500	commit: all change commited
+123b6888cadafbd2b5597f2501890b3dba852d7e f81e66b7b374bad634070fd2a91e934ec906721a Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778077729 -0500	commit: data folder deleted
+f81e66b7b374bad634070fd2a91e934ec906721a 14dc013d23f58fecb4f96c639e7b4c522d14402e Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778079355 -0500	commit: input and Product card added
+14dc013d23f58fecb4f96c639e7b4c522d14402e 4b925384b7f9b26a72991484072020fe090920dc Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778081022 -0500	commit: in card detail the content justified between and the title given fixed height
+4b925384b7f9b26a72991484072020fe090920dc 2ec72b1c47ffc51a43c425470e20805fae6e7eca Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778084401 -0500	commit: Cart page and route added
+2ec72b1c47ffc51a43c425470e20805fae6e7eca ec2b77a8e82cbbd121d37c9fc70cb1a9f0789936 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778164539 -0500	commit: cart context added
+ec2b77a8e82cbbd121d37c9fc70cb1a9f0789936 eb3141f9b6ed4589384dcbd1f63690758369337e Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778167662 -0500	commit: Nav bar UI upgraded
+eb3141f9b6ed4589384dcbd1f63690758369337e 528444935b96bb7c721a3396af8f3bb872b51629 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778169075 -0500	commit: update the ui of product detail
+528444935b96bb7c721a3396af8f3bb872b51629 698ccb327e3813cf089aa1711414c6c79357321c Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778172433 -0500	commit: cartDrawer component added
+698ccb327e3813cf089aa1711414c6c79357321c 83e13e4a8d216d76bcc4a6c7171569db94242536 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778248370 -0500	commit: search input UI upgraded
+83e13e4a8d216d76bcc4a6c7171569db94242536 806a2cad9e4a0dbd7d18e617984df416478573fb Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778249425 -0500	commit: update the footer
+806a2cad9e4a0dbd7d18e617984df416478573fb 7bf349e4d28ac9225ddb34063c1f294909b3c251 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778251156 -0500	commit: pagination concept added to the home page
+7bf349e4d28ac9225ddb34063c1f294909b3c251 604e10ab563d0b3928b1b0bf80ad281d73852213 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778252833 -0500	commit: product detail ui upgraded
+604e10ab563d0b3928b1b0bf80ad281d73852213 3efe4f58c52591ba848a1e6fec5b3fb70191b25b Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778338861 -0500	commit: side bar added and update on home page
+3efe4f58c52591ba848a1e6fec5b3fb70191b25b c383774959d8f9445f310fe7358f45aa87420cbc Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778339066 -0500	commit: update on side bar and home page
+c383774959d8f9445f310fe7358f45aa87420cbc 2a99c50bafb9998709874b3e939535e253053b38 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778340664 -0500	commit: update on the sideBar
+2a99c50bafb9998709874b3e939535e253053b38 d4395b1e6ba7670b3049f7ba7289e49e553a3dbf Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778506602 -0500	commit: toast functionality added
+d4395b1e6ba7670b3049f7ba7289e49e553a3dbf d7201ce9de3123ec9327d62129527ec54622bd70 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778590777 -0500	commit: updates on cartdrawer
+d7201ce9de3123ec9327d62129527ec54622bd70 f916bbb002501d8e98fa5d62356999e5e01a27e5 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778590915 -0500	commit: Cart page removed
+f916bbb002501d8e98fa5d62356999e5e01a27e5 a1cb2fb01b74cddc306d77ea124063bd028b6ff1 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778596405 -0500	commit: plus and minus functionality added to cartDrawer
+a1cb2fb01b74cddc306d77ea124063bd028b6ff1 639c0a5b6ce88d47bd0560deb5e52ca58237fd57 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778599260 -0500	commit: Check out page added
+639c0a5b6ce88d47bd0560deb5e52ca58237fd57 25dd8cc2d48d123926f436725e98d4f31cec79ff Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778599726 -0500	commit: OrderSuccess page added
+25dd8cc2d48d123926f436725e98d4f31cec79ff c1f3328eccb3c1d7de974dc6c4430bad47a3e0e0 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778601306 -0500	commit: server side folder structure
+c1f3328eccb3c1d7de974dc6c4430bad47a3e0e0 ec9e5a822a8dd5b410a414a988a87dd642316e78 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778602130 -0500	commit: db.js and server.js added
+ec9e5a822a8dd5b410a414a988a87dd642316e78 ec93277af0ab6de6e84564a1c2fc59eac573372b Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778604019 -0500	commit: User model controller middleware and route added
+ec93277af0ab6de6e84564a1c2fc59eac573372b cd77ba70ee5775ffa48bda1089799cbddc6e9552 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778605191 -0500	commit: order and product added
+cd77ba70ee5775ffa48bda1089799cbddc6e9552 cef1cb4544ce7ae1dd5a71ec1b4f04aa2459d2cd Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778605890 -0500	commit: .env removed
+cef1cb4544ce7ae1dd5a71ec1b4f04aa2459d2cd 18563f2e7b82d3c36d76a1e36be80281bdba0d53 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778625639 -0500	commit: removed env
+18563f2e7b82d3c36d76a1e36be80281bdba0d53 228f7c93fa111592c2de7941f1985e8fe89c3e1b Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778628457 -0500	commit: Cart model,controller and route added
+228f7c93fa111592c2de7941f1985e8fe89c3e1b 8eaf4ffbc3e3ffac2bc29d7a7502291910b07616 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778630876 -0500	commit: cart controller and route updated
+8eaf4ffbc3e3ffac2bc29d7a7502291910b07616 9ac7bea4c2346b30d86741dc913e41b0f89526a8 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778632938 -0500	commit: update the login and cart in the front
+9ac7bea4c2346b30d86741dc913e41b0f89526a8 8cf694c4c8d1cfa40563c6f137f40b6c26b8058a Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778686050 -0500	commit: auth front and back end configured
+8cf694c4c8d1cfa40563c6f137f40b6c26b8058a 4280598dd74033153c2511aa6a6c8c17fe44921d Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778687169 -0500	commit: update cart context and cart drawer
+4280598dd74033153c2511aa6a6c8c17fe44921d eccb2eeb1d35800f207ef0956138144a9d796405 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778692461 -0500	commit: update on productContext
+eccb2eeb1d35800f207ef0956138144a9d796405 45339d11432f4a4ff214cfd9e6dd37fa8b64e527 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1778777687 -0500	commit: change in cart drawer Ui
+45339d11432f4a4ff214cfd9e6dd37fa8b64e527 3a4572ec40f245800dc92bfccbfe1da0ff19709f Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779125283 -0500	commit: update getProduct in the productProvider
+3a4572ec40f245800dc92bfccbfe1da0ff19709f f66908a053cf0e11d4caa6915e866a6914193dea Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779125312 -0500	commit: update productProvider
+f66908a053cf0e11d4caa6915e866a6914193dea 377d4f08d2d86d19e810d99300a4d47ee53bb368 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779125389 -0500	commit: api.js removed
+377d4f08d2d86d19e810d99300a4d47ee53bb368 2a9acc805960c3b6ebcbb1a70b9b0b5e5eefbcc5 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779126174 -0500	commit: change in total and subTotal calculation in checkout page
+2a9acc805960c3b6ebcbb1a70b9b0b5e5eefbcc5 f6015e62a6f0eb17e71e03a992caa0f5eb47d77e Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779127920 -0500	commit: OrderPage added
+f6015e62a6f0eb17e71e03a992caa0f5eb47d77e 5b3ee61b7f33d1e79633e3feea2eefd3151edd43 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779133340 -0500	commit: change in checkout
+5b3ee61b7f33d1e79633e3feea2eefd3151edd43 4b63b6d7458208b9a709d2c555faa46d6616710a Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779149620 -0500	commit: orderSummary page and checkoutProgrecess component added
+4b63b6d7458208b9a709d2c555faa46d6616710a 58e10eabac077a75e6a527856e5a796df1d487d2 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779151021 -0500	commit: remove progress from cartDrawer
+58e10eabac077a75e6a527856e5a796df1d487d2 be74583b7d3cd2d1ea880eafccc3f78c38246047 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779151556 -0500	commit: set the id in product details
+be74583b7d3cd2d1ea880eafccc3f78c38246047 835995cb46194254993ef99d869077d2e5d8c9d6 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779159160 -0500	commit: products added
+835995cb46194254993ef99d869077d2e5d8c9d6 c16c1307ba2a399aabd1cc1d241f56458c70b4e8 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779204697 -0500	commit: small adjustment in product details
+c16c1307ba2a399aabd1cc1d241f56458c70b4e8 81c3a1cbf2af55dbf76daa4023cf24d276a48e4e Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779212319 -0500	commit: lazy loading adding on the app.js
+81c3a1cbf2af55dbf76daa4023cf24d276a48e4e 2d1535b199a396bd38f16268c7f25824c33b89d4 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779212681 -0500	commit: name change input component to SearchBar
+2d1535b199a396bd38f16268c7f25824c33b89d4 d39e2acef5783ca8317a16d978b223c67cddce0c Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779215277 -0500	commit: some updates on app.js
+d39e2acef5783ca8317a16d978b223c67cddce0c d6276a054aab4adf796049cf8f0b52106db0301a Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779288853 -0500	commit: User model add role
+d6276a054aab4adf796049cf8f0b52106db0301a 7c89f7444556b97a0ca5ee8eae4c0e60714426df Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779290058 -0500	commit: getOrder added in orderController
+7c89f7444556b97a0ca5ee8eae4c0e60714426df df49f606b7c731b823e36f76e056591ed5196be4 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779290201 -0500	commit: update on the product router
+df49f606b7c731b823e36f76e056591ed5196be4 ecaa6fe29f3e5727feb5fd87b503c55920e334fc Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779374468 -0500	commit: remove cart from user model
+ecaa6fe29f3e5727feb5fd87b503c55920e334fc bc713bcf4e4819191a7b842bd949a6a722975283 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779379160 -0500	commit: Update cart controller
+bc713bcf4e4819191a7b842bd949a6a722975283 099cc24102919ae564cdb3107a01706ff073ea4e Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779473002 -0500	commit: changes in cartController and cartContext
+099cc24102919ae564cdb3107a01706ff073ea4e 30a697840bcf0a4888a6550c2afac421bc8fdd61 Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779487576 -0500	commit: Admin add product page added
+30a697840bcf0a4888a6550c2afac421bc8fdd61 2478db0d30b0c742aa6abb63e4c41222e6aca77f Hellobisrat <100370010+Hellobisrat@users.noreply.github.com> 1779492873 -0500	commit: product added
