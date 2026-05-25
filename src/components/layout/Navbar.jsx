@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Home, LogIn, LogOut, ShoppingCart } from "lucide-react";
-import { AuthContext } from '../../context/AuthContext'
 import { CartContext } from "../../context/CartContext";
+import { useAuth } from "../../hooks/useAuth";
 import { motion } from "framer-motion";
 import CartDrawer from "../cart/CartDrawer";
 import { AnimatePresence } from "framer-motion";
@@ -10,7 +10,7 @@ import { AnimatePresence } from "framer-motion";
 
 
 const Navbar = () => {
-  const { user, logout } = useContext(AuthContext);
+  const { user, logout } = useAuth();
   const { cart } = useContext(CartContext);
   const navigate = useNavigate();
   const [isCartOpen, setIsCartOpen] = useState(false);
