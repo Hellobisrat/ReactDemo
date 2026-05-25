@@ -7,15 +7,11 @@ import { motion } from "framer-motion";
 const ProductCard = ({ filteredProducts }) => {
   const { addToCart } = useContext(CartContext);
 
-  console.log("filteredProducts RECEIVED:", filteredProducts);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
       {filteredProducts.map((product) => {
-        console.log("PRODUCT:", product);
-        console.log("PRODUCT IMAGE:", product.image);
-
-
+      
         return (
           <motion.div
             key={product._id}
@@ -42,11 +38,11 @@ const ProductCard = ({ filteredProducts }) => {
               <p className="font-semibold text-slate-900 text-center line-clamp-2 h-[50px]">
                 {product.title}
               </p>
-<img
-  src={`https://images.weserv.nl/?url=${product.image.replace("https://", "")}`}
-  alt={product.title}
-  className="w-full h-48 object-cover rounded-lg mt-3"
-/>
+            <img
+              src={`https://images.weserv.nl/?url=${product.image.replace("https://", "")}`}
+              alt={product.title}
+              className="w-full h-48 object-cover rounded-lg mt-3"
+            />
 
             </Link>
 
