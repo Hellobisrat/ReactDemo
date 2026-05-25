@@ -1,11 +1,11 @@
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import AdminAddProduct from "./pages/AdminAddProduct";
-import AdminRoute from "./components/routes/AdminRoute";
+import AdminRoute from "./routes/AdminRoute";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import ProtectedRoute from "./components/routes/ProtectedRoute";
+import ProtectedRoute from "./routes/ProtectedRoute";
 import { Toaster } from "sonner";
 
 import Login from "./pages/Login";
