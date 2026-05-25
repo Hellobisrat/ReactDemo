@@ -1,17 +1,15 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
 const ProductCard = ({ filteredProducts }) => {
   const { addToCart } = useContext(CartContext);
 
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
       {filteredProducts.map((product) => {
-      
         return (
           <motion.div
             key={product._id}
@@ -34,16 +32,18 @@ const ProductCard = ({ filteredProducts }) => {
               <Heart className="w-5 h-5 text-pink-500 group-hover:scale-110 transition" />
             </button>
 
-            <Link to={`/product/${product._id}`} className="flex flex-col items-center">
+            <Link
+              to={`/product/${product._id}`}
+              className="flex flex-col items-center"
+            >
               <p className="font-semibold text-slate-900 text-center line-clamp-2 h-[50px]">
                 {product.title}
               </p>
-            <img
-              src={`https://images.weserv.nl/?url=${product.image.replace("https://", "")}`}
-              alt={product.title}
-              className="w-full h-48 object-cover rounded-lg mt-3"
-            />
-
+              <img
+                src={`https://images.weserv.nl/?url=${product.image.replace("https://", "")}`}
+                alt={product.title}
+                className="w-full h-48 object-cover rounded-lg mt-3"
+              />
             </Link>
 
             <div className="flex flex-col items-center gap-2 mt-4">
@@ -80,4 +80,3 @@ const ProductCard = ({ filteredProducts }) => {
 };
 
 export default React.memo(ProductCard);
-

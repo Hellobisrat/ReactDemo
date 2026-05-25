@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import AdminAddProduct from "./pages/AdminAddProduct";
 import AdminRoute from "./routes/AdminRoute";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import { Toaster } from "sonner";
 

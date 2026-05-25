@@ -1,9 +1,9 @@
-import React, { useContext, useState,useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ProductContext } from "../context/ProductContext";
 import LoadingSpinner from "../components/LoadingSpinner";
-import ProductCard from "../components/ProductCard";
-import Sidebar from "../components/Sidebar";
-import SearchBar from "../components/SearchBar";
+import ProductCard from "../components/product/ProductCard";
+import Sidebar from "../components/layout/Sidebar";
+import SearchBar from "../components/layout/SearchBar";
 
 const Home = () => {
   const { products, loading } = useContext(ProductContext);
@@ -14,7 +14,6 @@ const Home = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   console.log("BACKEND PRODUCTS:", products);
-
 
   const itemsPerPage = 8;
 
@@ -35,28 +34,28 @@ const Home = () => {
   // Pagination
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentProducts = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
-  
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstItem,
+    indexOfLastItem,
+  );
+
   useEffect(() => {
-  const handleResize = () => {
-    if (window.innerWidth >= 768) {
-      setSidebarOpen(true);   // always open on desktop
-    }
-  };
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setSidebarOpen(true); // always open on desktop
+      }
+    };
 
-  handleResize(); // run on mount
-  window.addEventListener("resize", handleResize);
+    handleResize(); // run on mount
+    window.addEventListener("resize", handleResize);
 
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
-
-
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   if (loading) return <LoadingSpinner />;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] min-h-screen gap-6 p-4 mt-6">
-
       {/* Sidebar */}
       <Sidebar
         isOpen={sidebarOpen}
