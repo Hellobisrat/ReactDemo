@@ -1,11 +1,11 @@
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import AdminAddProduct from "./pages/AdminAddProduct";
-import AdminRoute from "./components/AdminRoute";
+import AdminRoute from "./components/routes/AdminRoute";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/routes/ProtectedRoute";
 import { Toaster } from "sonner";
 
 import Login from "./pages/Login";
@@ -25,7 +25,9 @@ function App() {
       <Navbar />
 
       <div className="flex-grow">
-        <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
+        <Suspense
+          fallback={<div className="text-center mt-10">Loading...</div>}
+        >
           <Routes>
             <Route path="/" element={<Login />} />
 
@@ -53,12 +55,12 @@ function App() {
             <Route path="/orders" element={<OrdersPage />} />
 
             <Route
-            path="/admin/products/new"
-          element={
-               <AdminRoute>
-               <AdminAddProduct />
-              </AdminRoute>
-             }
+              path="/admin/products/new"
+              element={
+                <AdminRoute>
+                  <AdminAddProduct />
+                </AdminRoute>
+              }
             />
           </Routes>
         </Suspense>
