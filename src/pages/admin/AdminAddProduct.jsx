@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { API } from "../api/axios";
+import { API } from "../../api/axios";
 
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
@@ -12,14 +12,13 @@ const AdminAddProduct = () => {
   const [stock, setStock] = useState(100);
   const [imageFile, setImageFile] = useState(null);
   const [imagePreview, setImagePreview] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-const CLOUD_NAME = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
-const UPLOAD_PRESET = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET;
+  const CLOUD_NAME = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
+  const UPLOAD_PRESET = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET;
 
-console.log(UPLOAD_PRESET)
-console.log(CLOUD_NAME)
-
+  console.log(UPLOAD_PRESET);
+  console.log(CLOUD_NAME);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -28,7 +27,7 @@ console.log(CLOUD_NAME)
   };
 
   const uploadToCloudinary = async () => {
-     console.log("Uploading to Cloudinary...", CLOUD_NAME, UPLOAD_PRESET);
+    console.log("Uploading to Cloudinary...", CLOUD_NAME, UPLOAD_PRESET);
     const formData = new FormData();
     formData.append("file", imageFile);
     formData.append("upload_preset", UPLOAD_PRESET);
@@ -38,37 +37,34 @@ console.log(CLOUD_NAME)
       {
         method: "POST",
         body: formData,
-      }
+      },
     );
 
     const data = await res.json();
-      console.log("Cloudinary response:", data);
+    console.log("Cloudinary response:", data);
     return data.secure_url;
   };
 
-
-
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    const imageUrl = await uploadToCloudinary();
-    const token = localStorage.getItem("token");
+    try {
+      const imageUrl = await uploadToCloudinary();
+      const token = localStorage.getItem("token");
 
-    await API.post(
-      "/products",
-      { title, description, price, category, stock, image: imageUrl },
-      { headers: { Authorization: `Bearer ${token}` } }
-    );
+      await API.post(
+        "/products",
+        { title, description, price, category, stock, image: imageUrl },
+        { headers: { Authorization: `Bearer ${token}` } },
+      );
 
-    toast.success("Product created successfully");
-    navigate("/");   // ✅ correct place
-  } catch (error) {
-    console.log("ERROR:", error.response?.data || error.message);
-    toast.error("Failed to create product");
-  }
-};
-
+      toast.success("Product created successfully");
+      navigate("/"); // ✅ correct place
+    } catch (error) {
+      console.log("ERROR:", error.response?.data || error.message);
+      toast.error("Failed to create product");
+    }
+  };
 
   return (
     <div className="max-w-xl mx-auto mt-10 bg-white p-6 rounded shadow">
@@ -128,7 +124,10 @@ console.log(CLOUD_NAME)
           />
         )}
 
-        <button type="submit"  className="bg-purple-600 text-white px-4 py-2 rounded">
+        <button
+          type="submit"
+          className="bg-purple-600 text-white px-4 py-2 rounded"
+        >
           Create Product
         </button>
       </form>

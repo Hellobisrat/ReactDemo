@@ -1,7 +1,9 @@
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import AdminAddProduct from "./pages/AdminAddProduct";
+import AdminAddProduct from "./pages/admin/AdminAddProduct";
 import AdminRoute from "./routes/AdminRoute";
+import AdminProductList from "./pages/admin/AdminAddProduct";
+import AdminEditProduct from "./pages/admin/AdminEditProduct";
 
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
@@ -55,13 +57,32 @@ function App() {
             <Route path="/orders" element={<OrdersPage />} />
 
             <Route
-              path="/admin/products/new"
-              element={
-                <AdminRoute>
-                  <AdminAddProduct />
-                </AdminRoute>
-              }
-            />
+  path="/admin/products"
+  element={
+    <AdminRoute>
+      <AdminProductList />
+    </AdminRoute>
+  }
+/>
+
+<Route
+  path="/admin/products/:id/edit"
+  element={
+    <AdminRoute>
+      <AdminEditProduct />
+    </AdminRoute>
+  }
+/>
+
+<Route
+  path="/admin/add-product"
+  element={
+    <AdminRoute>
+      <AdminAddProduct />
+    </AdminRoute>
+  }
+/>
+
           </Routes>
         </Suspense>
       </div>

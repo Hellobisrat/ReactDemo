@@ -94,6 +94,13 @@ const Navbar = () => {
   </Link>
 )}
 
+  {user?.role === "admin" && (
+  <Link to="/admin/products" className="px-3">
+    Admin Panel
+  </Link>
+)}
+
+
       </div>
 
       {/* Cart Drawer */}
