@@ -6,6 +6,8 @@ const AdminEditProduct = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const {updateProduct,getProductById} = useProducts()
+
+
   const token=localStorage.getItem('token')
 
   const [form, setForm] = useState({
