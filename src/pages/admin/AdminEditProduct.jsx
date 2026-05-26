@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useProducts } from "../../hooks/useProducts";
+import { toast } from "sonner";
 
 const AdminEditProduct = () => {
+
   const { id } = useParams();
   const navigate = useNavigate();
   const {updateProduct,getProductById} = useProducts()
+  const [updating, setUpdating] = useState(false);
+
 
 
   const token=localStorage.getItem('token')
@@ -30,11 +34,23 @@ const AdminEditProduct = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
+  setUpdating(true);
+
+  try {
     await updateProduct(id, form, token);
-   navigate("/admin/products");
-   
-  };
+    toast.success("Product updated successfully");
+    navigate("/admin/products");
+  } catch (err) {
+    toast.error("Failed to update product");
+  } finally {
+    setUpdating(false);
+  }
+};
+
+  if (!form.title) {
+  return <div className="text-center mt-10">Loading product...</div>;
+}
 
   return (
     <div className="p-6 w-[500px] md:w-[750px] mx-auto">
@@ -73,9 +89,15 @@ const AdminEditProduct = () => {
           placeholder="Image URL"
         />
 
-        <button className="w-full bg-blue-600 text-white py-2 rounded">
-          Save Changes
-        </button>
+        <button
+        disabled={updating}
+        className={`w-full py-2 rounded text-white ${
+          updating ? "bg-gray-400" : "bg-blue-600"
+        }`}
+      >
+        {updating ? "Saving..." : "Save Changes"}
+      </button>
+
       </form>
     </div>
   );
