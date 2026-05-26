@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import AdminAddProduct from "./pages/admin/AdminAddProduct";
 import AdminRoute from "./routes/AdminRoute";
-import AdminProductList from "./pages/admin/AdminAddProduct";
+import AdminProductList from "./pages/admin/AdminProductList";
 import AdminEditProduct from "./pages/admin/AdminEditProduct";
 
 import Navbar from "./components/layout/Navbar";
@@ -14,8 +14,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
-import OrderSuccess from "./pages/OrderSucess";
-import OrdersPage from "./pages/OrdersPage";
+import OrderSuccess from "./pages/order/OrderSucess";
+import OrdersPage from "./pages/order/OrdersPage";
 
 // Correct lazy import
 const ProductDetail = React.lazy(() => import("./pages/ProductDetails"));
@@ -56,7 +56,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/orders" element={<OrdersPage />} />
 
-            <Route
+<Route
   path="/admin/products"
   element={
     <AdminRoute>
@@ -82,6 +82,7 @@ function App() {
     </AdminRoute>
   }
 />
+
 
           </Routes>
         </Suspense>

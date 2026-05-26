@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import {API} from "../api/axios.js";
+import { API } from "../api/axios";
 
 export const ProductContext = createContext();
 

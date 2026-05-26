@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {API} from "../api/axios";
+import {API} from "../../api/axios.js";
 
 const OrdersPage = () => {
   const [orders, setOrders] = useState([]);

@@ -87,7 +87,7 @@ const Navbar = () => {
         {/* Admin: Add Product */}
 {user?.role === "admin" && (
   <Link
-    to="/admin/products/new"
+    to="/admin/add-product"
     className="flex items-center gap-2 text-purple-600 font-semibold hover:text-purple-800 transition"
   >
     + Add Product
@@ -95,7 +95,7 @@ const Navbar = () => {
 )}
 
   {user?.role === "admin" && (
-  <Link to="/admin/products" className="px-3">
+  <Link to="/admin/products" className="flex items-center gap-2 text-purple-600 font-semibold hover:text-purple-800 transition">
     Admin Panel
   </Link>
 )}

@@ -5,7 +5,7 @@ import { API } from "../api/axios";
 import { toast } from "sonner";
 import OrderSummaryAccordion from "../components/OrderSummaryAccordion";
 import CheckoutProgress from '../components/ChekOutProgress'
-import OrderSummary from "./OrderSummary";
+import OrderSummary from "./order/OrderSummary";
 
 const Checkout = () => {
   const { cart, clearCart } = useContext(CartContext);
