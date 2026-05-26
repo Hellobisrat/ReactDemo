@@ -1,6 +1,5 @@
 import { useProducts } from "../../hooks/useProducts";
 import { Link } from "react-router-dom";
-import { API } from "../../api/axios";
 
 const AdminProductList = () => {
   const { products, deleteProduct } = useProducts();

@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { API } from "../../api/axios";
 import { useProducts } from "../../hooks/useProducts";
 
 const AdminEditProduct = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const {updateProduct} = useProducts()
+  const {updateProduct,getProductById} = useProducts()
   const token=localStorage.getItem('token')
 
   const [form, setForm] = useState({
@@ -18,11 +17,11 @@ const AdminEditProduct = () => {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const { data } = await API.get(`/products/${id}`);
-      setForm(data);
+     const product = await getProductById(id);
+     setForm(product);
     };
     fetchProduct();
-  }, [id]);
+  }, [id,getProductById]);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });

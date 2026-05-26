@@ -25,7 +25,10 @@ export const ProductProvider = ({ children }) => {
     fetchProducts();
   }, []);
 
-  const getProductById = (id) => products.find((p) => p._id === id);
+  const getProductById = async (id) => {
+  const { data } = await API.get(`/products/${id}`);
+  return data;
+};
 
   const createProduct = async (productData, token) => {
     const { data } = await API.post("/products", productData, {
