@@ -2,6 +2,7 @@ import { useProducts } from "../../hooks/useProducts";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { useState } from "react";
+import Button from "../../components/Button";
 
 const AdminProductList = () => {
   const { products, deleteProduct,loading } = useProducts();
@@ -32,7 +33,16 @@ const AdminProductList = () => {
 
   return (
     <div className="p-6 w-[700px] md:w-[850px] mx-auto">
-      <h1 className="text-xl font-bold mb-4">Manage Products</h1>
+      <div className="flex justify-between items-center mb-4">
+         <h1 className="text-xl font-bold mb-4">Manage Products</h1>
+       <Link
+        to="/admin/add-product"
+        className="px-4 py-2 bg-green-600 text-white rounded"
+      >
+        + Add Product
+      </Link>
+      </div>
+     
 
       <div className="space-y-4">
         {products.map((p) => (
@@ -40,28 +50,37 @@ const AdminProductList = () => {
             key={p._id}
             className="flex justify-between items-center p-4 border rounded"
           >
-            <div>
-              <h2 className="font-semibold">{p.title}</h2>
+            <div className="flex items-center gap-4">
+
+              <img
+                 src={p.image}
+                alt={p.title}
+               className="w-8 h-8 object-cover rounded"
+               />
+               <h2 className="font-semibold">{p.title}</h2>
               <p className="text-sm text-gray-500">${p.price}</p>
-            </div>
+            
+               <p className="text-xs text-gray-500">Category: {p.category}</p>
+               <p className="text-xs text-gray-500">Stock: {p.stock}</p>
+              </div>
+              
+            
 
             <div className="flex gap-3">
               <Link
                 to={`/admin/products/${p._id}/edit`}
                 className="px-3 py-1 bg-blue-500 text-white rounded"
               >
-                Edit
+                <Button>Edit</Button>
               </Link>
 
-              <button
+              <Button
                 disabled={deletingId === p._id}
                 onClick={()=>handleDelete(p._id)}
-               className={`px-3 py-1 rounded text-white ${
-                   deletingId === p._id ? "bg-gray-400" : "bg-red-500"
-                }`}
+                variant="danger"
                    >
                {deletingId === p._id ? "Deleting..." : "Delete"}
-              </button>
+              </Button>
 
             </div>
           </div>
