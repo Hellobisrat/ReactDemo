@@ -1,82 +1,92 @@
-import { createContext, useState, useEffect } from "react";
-import { API } from "../api/axios";
+import { createContext, useState, useEffect, useCallback } from "react";
+import { productService } from "../services/productService";
+import { toast } from "sonner";
 
 export const ProductContext = createContext();
 
-
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [loadingProducts, setLoadingProducts] = useState(true);
 
   // Fetch all products
-  const fetchProducts = async () => {
+  const fetchProducts = useCallback(async () => {
     try {
-      const { data } = await API.get("/products");
+      setLoadingProducts(true);
+      const { data } = await productService.getAll();
       setProducts(data);
     } catch (err) {
-      setError("Failed to fetch products");
+      toast.error("Failed to fetch products");
     } finally {
-      setLoading(false);
+      setLoadingProducts(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [fetchProducts]);
 
+  // Get product by ID
   const getProductById = async (id) => {
-  const { data } = await API.get(`/products/${id}`);
-  return data;
-};
+    try {
+      const { data } = await productService.getById(id);
+      return data;
+    } catch {
+      toast.error("Failed to load product");
+      return null;
+    }
+  };
 
+  // Create product
   const createProduct = async (productData, token) => {
-    const { data } = await API.post("/products", productData, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    setProducts((prev) => [...prev, data]);
-    return data;
+    try {
+      const { data } = await productService.create(productData, token);
+      setProducts((prev) => [...prev, data]);
+      toast.success("Product created");
+      return data;
+    } catch {
+      toast.error("Failed to create product");
+    }
   };
 
+  // Update product
   const updateProduct = async (id, productData, token) => {
-    const { data } = await API.put(`/products/${id}`, productData, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    setProducts((prev) =>
-      prev.map((p) => (p._id === id ? data : p))
-    );
-
-    return data;
+    try {
+      const { data } = await productService.update(id, productData, token);
+      setProducts((prev) =>
+        prev.map((p) => (p._id === id ? data : p))
+      );
+      toast.success("Product updated");
+      return data;
+    } catch {
+      toast.error("Failed to update product");
+    }
   };
 
+  // Delete product
   const deleteProduct = async (id, token) => {
-    await API.delete(`/products/${id}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    setProducts((prev) => prev.filter((p) => p._id !== id));
-  };
-
-  const refreshProducts = async () => {
-    await fetchProducts();
+    try {
+      await productService.remove(id, token);
+      setProducts((prev) => prev.filter((p) => p._id !== id));
+      toast.success("Product deleted");
+    } catch {
+      toast.error("Failed to delete product");
+    }
   };
 
   return (
     <ProductContext.Provider
       value={{
         products,
-        loading,
-        error,
+        loadingProducts,
+        fetchProducts,
         getProductById,
         createProduct,
         updateProduct,
         deleteProduct,
-        refreshProducts,
       }}
     >
       {children}
     </ProductContext.Provider>
   );
 };
+

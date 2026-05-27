@@ -13,10 +13,16 @@ const ProductDetail = () => {
 
   const [product, setProduct] = useState(null);
 
-  useEffect(() => {
-    const found = getProductById(id);
-    setProduct(found);
-  }, [id]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+   useEffect(() => {
+  const fetchProduct = async () => {
+    const product = await getProductById(id);
+    setProduct(product);
+  };
+
+  fetchProduct();
+}, [id,getProductById]);
+
 
   if (!product) return <LoadingSpinner/>
 
