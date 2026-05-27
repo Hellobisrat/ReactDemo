@@ -1,61 +1,78 @@
-import  { createContext, useState, useEffect } from 'react';
-import { API } from '../api/axios.js';
-
+import { createContext, useState, useEffect, useCallback } from "react";
+import { authService } from "../services/authService";
+import { toast } from "sonner";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [ setLoading] = useState(true);
+  const [authLoading, setAuthLoading] = useState(true);
 
- useEffect(() => {
-  try {
-    const savedUser = localStorage.getItem("user");
-    if (savedUser && savedUser !== "undefined") {
-      setUser(JSON.parse(savedUser));
+  // Restore user on refresh
+  const loadUser = useCallback(async () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setAuthLoading(false);
+      return;
     }
-  } catch (err) {
-    localStorage.removeItem("user");
-  } finally {
-    setLoading(false);
-  }
-}, []);
 
- const register = async(formData) => {
-  const { data } = await API.post("/auth/register", formData);
+    try {
+      const { data } = await authService.getProfile(token);
+      setUser(data);
+    } catch {
+      localStorage.removeItem("token");
+    } finally {
+      setAuthLoading(false);
+    }
+  }, []);
 
-  localStorage.setItem("token", data.token);
-  localStorage.setItem("role", data.role);
-  localStorage.setItem("user", JSON.stringify(data));
+  useEffect(() => {
+    loadUser();
+  }, [loadUser]);
 
-  setUser(data);
+  // Login
+  const login = async (credentials) => {
+    try {
+      const { data } = await authService.login(credentials);
+      localStorage.setItem("token", data.token);
+      setUser(data.user);
+      toast.success("Logged in");
+      return data.user;
+    } catch {
+      toast.error("Invalid credentials");
+      return null;
+    }
+  };
 
-  return data;
-};
+  // Register
+  const register = async (info) => {
+    try {
+      const { data } = await authService.register(info);
+      toast.success("Account created");
+      return data;
+    } catch {
+      toast.error("Registration failed");
+      return null;
+    }
+  };
 
-const login = async(formData)=>{
-  const { data } = await API.post("/auth/login", formData);
-
-  localStorage.setItem("token", data.token);
-  localStorage.setItem("role", data.role);
-  localStorage.setItem("user", JSON.stringify(data));
-
-  setUser(data);
-
-  return data;
-};
-
-
+  // Logout
   const logout = () => {
-    setUser(null);
-    localStorage.removeItem("user");
     localStorage.removeItem("token");
-    localStorage.removeItem("role");
-
+    setUser(null);
+    toast.success("Logged out");
   };
 
   return (
-    <AuthContext.Provider value={{ user, register, login, logout }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        authLoading,
+        login,
+        register,
+        logout,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
