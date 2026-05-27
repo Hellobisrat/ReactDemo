@@ -14,17 +14,20 @@ const Footer = () => {
           </p>
 
           {/* Social Icons */}
-          <div className="flex gap-4 mt-4">
-            <a className="hover:text-white transition" href="#">
-              <Facebook />
-            </a>
-            <a className="hover:text-white transition" href="#">
-              <Instagram />
-            </a>
-            <a className="hover:text-white transition" href="#">
-              <Twitter />
-            </a>
-          </div>
+        <div className="flex gap-4 mt-4">
+  <button className="hover:text-white transition">
+    <Facebook />
+  </button>
+
+  <button className="hover:text-white transition">
+    <Instagram />
+  </button>
+
+  <button className="hover:text-white transition">
+    <Twitter />
+  </button>
+</div>
+
         </div>
 
         {/* Quick Links */}
