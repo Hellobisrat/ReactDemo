@@ -1,3 +1,5 @@
+
+
 const Button = ({ children, variant = "primary", ...props }) => {
   const styles = {
     primary: "bg-blue-500 text-white",
@@ -6,7 +8,7 @@ const Button = ({ children, variant = "primary", ...props }) => {
   };
 
   return (
-    <button {...props} className={`px-3 py-1 rounded ${styles[variant]}`}>
+    <button {...props} className={`px-6 py-3 w-full rounded  ${variant?styles[variant]:"bg-purple-600"}`}>
       {children}
     </button>
   );

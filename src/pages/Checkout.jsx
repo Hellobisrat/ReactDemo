@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import OrderSummaryAccordion from "../components/ui/OrderSummaryAccordion";
 import CheckoutProgress from '../components/ui/ChekOutProgress'
 import OrderSummary from "./order/OrderSummary";
+import Button from "../components/ui/Button";
 
 const Checkout = () => {
   const { cart, clearCart } = useContext(CartContext);
@@ -191,12 +192,12 @@ const handleSubmit = async (e) => {
           </div>
         </section>
 
-        <button
+        <Button
           type="submit"
           className="mt-4 w-full md:w-auto bg-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-purple-700 transition"
         >
           Place Order
-        </button>
+        </Button>
       </form>
 
       {/* Right: Order Summary */}
