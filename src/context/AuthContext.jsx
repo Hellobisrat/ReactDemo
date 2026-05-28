@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, useCallback } from "react";
-import { authService } from "../services/authService";
+import { authService } from "../services/authService.js";
 import { toast } from "sonner";
 
 export const AuthContext = createContext();
@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
 
     try {
       const { data } = await authService.getProfile(token);
-      setUser(data);
+      setUser(data.user);
     } catch {
       localStorage.removeItem("token");
     } finally {

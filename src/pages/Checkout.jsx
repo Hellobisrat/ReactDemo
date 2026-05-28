@@ -3,8 +3,8 @@ import { CartContext } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import { API } from "../api/axios";
 import { toast } from "sonner";
-import OrderSummaryAccordion from "../components/OrderSummaryAccordion";
-import CheckoutProgress from '../components/ChekOutProgress'
+import OrderSummaryAccordion from "../components/ui/OrderSummaryAccordion";
+import CheckoutProgress from '../components/ui/ChekOutProgress'
 import OrderSummary from "./order/OrderSummary";
 
 const Checkout = () => {

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { CheckCircle } from "lucide-react";
-import CheckoutProgress from "../../components/ChekOutProgress";
+import CheckoutProgress from "../../components/ui/ChekOutProgress";
 
 const OrderSuccess = () => {
   const navigate = useNavigate();

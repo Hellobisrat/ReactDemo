@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, useCallback } from "react";
-import { productService } from "../services/productService";
+import { ProductService } from "../services/productService.js"
 import { toast } from "sonner";
 
 export const ProductContext = createContext();
@@ -12,7 +12,7 @@ export const ProductProvider = ({ children }) => {
   const fetchProducts = useCallback(async () => {
     try {
       setLoadingProducts(true);
-      const { data } = await productService.getAll();
+      const { data } = await ProductService.getAll();
       setProducts(data);
     } catch (err) {
       toast.error("Failed to fetch products");
@@ -28,7 +28,7 @@ export const ProductProvider = ({ children }) => {
   // Get product by ID
   const getProductById = async (id) => {
     try {
-      const { data } = await productService.getById(id);
+      const { data } = await ProductService.getById(id);
       return data;
     } catch {
       toast.error("Failed to load product");
@@ -39,7 +39,7 @@ export const ProductProvider = ({ children }) => {
   // Create product
   const createProduct = async (productData, token) => {
     try {
-      const { data } = await productService.create(productData, token);
+      const { data } = await ProductService.create(productData, token);
       setProducts((prev) => [...prev, data]);
       toast.success("Product created");
       return data;
@@ -51,7 +51,7 @@ export const ProductProvider = ({ children }) => {
   // Update product
   const updateProduct = async (id, productData, token) => {
     try {
-      const { data } = await productService.update(id, productData, token);
+      const { data } = await ProductService.update(id, productData, token);
       setProducts((prev) =>
         prev.map((p) => (p._id === id ? data : p))
       );
@@ -65,7 +65,7 @@ export const ProductProvider = ({ children }) => {
   // Delete product
   const deleteProduct = async (id, token) => {
     try {
-      await productService.remove(id, token);
+      await ProductService.remove(id, token);
       setProducts((prev) => prev.filter((p) => p._id !== id));
       toast.success("Product deleted");
     } catch {

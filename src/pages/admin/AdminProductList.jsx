@@ -2,7 +2,7 @@ import { useProducts } from "../../hooks/useProducts";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { useState } from "react";
-import Button from "../../components/Button";
+import Button from "../../components/ui/Button";
 
 const AdminProductList = () => {
   const { products, deleteProduct,loading } = useProducts();

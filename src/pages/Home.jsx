@@ -1,7 +1,7 @@
 import React, {  useState, useEffect } from "react";
 
 import { useProducts } from "../hooks/useProducts";
-import LoadingSpinner from "../components/LoadingSpinner";
+import LoadingSpinner from "../components/ui/LoadingSpinner";
 import ProductCard from "../components/product/ProductCard";
 import Sidebar from "../components/layout/Sidebar";
 import SearchBar from "../components/layout/SearchBar";

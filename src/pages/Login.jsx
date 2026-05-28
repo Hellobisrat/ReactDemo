@@ -20,23 +20,27 @@ const Login = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!formData.email || !formData.password) {
-      setError("Email and password are required");
-      return;
-    }
+  if (!formData.email || !formData.password) {
+    setError("Email and password are required");
+    return;
+  }
 
-    try {
-      await login(formData);
-      toast.success("Logged in successfully");
-      navigate("/home");
-    } catch (err) {
-      const msg = err.response?.data?.message || "Invalid email or password";
-      setError(msg);
-      toast.error(msg);
-    }
-  };
+  const user = await login(formData);
+
+if (!user) {
+  setError("Invalid email or password");
+  return;
+}
+
+// Wait for React state to update
+setTimeout(() => {
+  navigate("/home");
+}, 50);
+toast.success("logged in successfully")
+};
+
 
   return (
     <div className="grid grid-cols-3 gap-10 sm:m-6 md:m-12 lg:m-24 min-h-screen">
