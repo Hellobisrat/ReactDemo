@@ -38,7 +38,7 @@ const Navbar = () => {
       "
     >
       {/* Left: Home Link */}
-      <Link to="/home" className="flex items-center gap-2 hover:opacity-80 transition">
+      <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition">
         <Home className="w-6 h-6 text-purple-400" />
         <span className="text-purple-600 font-bold">Home</span>
       </Link>

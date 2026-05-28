@@ -30,11 +30,12 @@ function App() {
         <Suspense
           fallback={<div className="text-center mt-10">Loading...</div>}
         >
+       
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
 
             <Route
-              path="/home"
+              path="/"
               element={
                 <ProtectedRoute>
                   <Home />
@@ -85,6 +86,7 @@ function App() {
 
 
           </Routes>
+  
         </Suspense>
       </div>
 

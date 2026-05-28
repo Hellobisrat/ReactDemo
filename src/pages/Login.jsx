@@ -19,7 +19,7 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
   e.preventDefault();
 
   if (!formData.email || !formData.password) {
@@ -27,19 +27,27 @@ const Login = () => {
     return;
   }
 
-  const user = await login(formData);
+ const user = await login(formData);
 
-if (!user) {
-  setError("Invalid email or password");
-  return;
-}
+console.log("Returned user from login():", user);
+console.log("AuthContext user BEFORE navigate:", user);
+console.log("AuthContext user AFTER login():", user);
 
-// Wait for React state to update
-setTimeout(() => {
-  navigate("/home");
-}, 50);
-toast.success("logged in successfully")
+
+  if (!user) {
+    setError("Invalid email or password");
+    return;
+  }
+
+  setError("");
+  toast.success("Logged in successfully");
+
+  setTimeout(() => {
+    navigate("/", { replace: true });
+  }, 50);
 };
+
+
 
 
   return (

@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
 
     try {
       const { data } = await authService.getProfile(token);
-      setUser(data.user);
+      setUser(data);
     } catch {
       localStorage.removeItem("token");
     } finally {
@@ -31,18 +31,22 @@ export const AuthProvider = ({ children }) => {
   }, [loadUser]);
 
   // Login
-  const login = async (credentials) => {
-    try {
-      const { data } = await authService.login(credentials);
-      localStorage.setItem("token", data.token);
-      setUser(data.user);
-      toast.success("Logged in");
-      return data.user;
-    } catch {
-      toast.error("Invalid credentials");
-      return null;
-    }
-  };
+const login = async (credentials) => {
+  try {
+    const response = await authService.login(credentials);
+    console.log("LOGIN RESPONSE:", response);
+
+    const { data } = response;
+    console.log("LOGIN DATA:", data);
+
+    localStorage.setItem("token", data.token);
+    setUser(data);
+    return data;
+  } catch (err) {
+    console.log("LOGIN ERROR:", err);
+    return null;
+  }
+};
 
   // Register
   const register = async (info) => {
