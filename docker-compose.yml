@@ -1,0 +1,43 @@
+services:
+  mongodb:
+    image: mongo
+    container_name: reactdemo-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - reactnet
+
+  backend:
+    build: ./server
+    container_name: reactdemo-backend
+    environment:
+      MONGO_DB_USERNAME: admin
+      MONGO_DB_PWD: password
+    depends_on:
+      - mongodb
+    ports:
+      - "5000:5000"
+    networks:
+      - reactnet
+
+  frontend:
+    build: .
+    container_name: reactdemo-frontend
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+    networks:
+      - reactnet
+
+networks:
+  reactnet:
+    driver: bridge
+
+volumes:
+  mongo-data:
