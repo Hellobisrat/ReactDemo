@@ -1,13 +1,18 @@
 import mongoose from "mongoose";
 
-const connectDB = async () => {
+
+async function connectDB() {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
-    console.log(`📦 MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error("❌ MongoDB connection failed:", error.message);
-    process.exit(1);
+    await mongoose.connect(
+      "mongodb://admin:password@reactdemo-mongodb:27017/reactdemo?authSource=admin"
+    );
+    console.log("MongoDB connected");
+  } catch (err) {
+    console.error("MongoDB connection failed:", err);
   }
-};
+}
+
+
+
 
 export default connectDB;

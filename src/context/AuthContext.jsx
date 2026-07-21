@@ -34,16 +34,11 @@ export const AuthProvider = ({ children }) => {
 const login = async (credentials) => {
   try {
     const response = await authService.login(credentials);
-    console.log("LOGIN RESPONSE:", response);
-
     const { data } = response;
-    console.log("LOGIN DATA:", data);
-
     localStorage.setItem("token", data.token);
     setUser(data);
     return data;
   } catch (err) {
-    console.log("LOGIN ERROR:", err);
     return null;
   }
 };
