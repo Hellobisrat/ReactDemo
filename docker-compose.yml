@@ -1,7 +1,8 @@
 services:
   mongodb:
-    image: mongo
+    image: mongo:6.0
     container_name: reactdemo-mongodb
+    restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
@@ -22,6 +23,8 @@ services:
       - mongodb
     ports:
       - "5000:5000"
+    env_file:
+    - ./server/.env.local
     networks:
       - reactnet
 
