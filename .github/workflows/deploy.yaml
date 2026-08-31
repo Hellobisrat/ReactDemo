@@ -30,4 +30,4 @@ jobs:
           docker push bisrat1/reactdemo-frontend:latest
 
       - name: Deployment notice
-        run: echo "Images pushed. Deploy manually using: helm upgrade reactdemo ./reactdemo-chart -n demo"
+        run: echo "Images pushed. Deploy manually using helm upgrade reactdemo ./reactdemo-chart -n demo"
