@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: reactdemo-config
+  namespace: {{ .Values.namespace }}
+data:
+  APP_NAME: "ReactDemo"
+  ENV: "development"

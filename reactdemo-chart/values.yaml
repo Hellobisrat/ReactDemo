@@ -1,0 +1,27 @@
+nameSpace: demo
+
+backend:
+  image: bisrat1/reactdemo-backend:latest
+  replicas: 2
+  port: 8000
+  MONGO_URI: "mongodb://mongo:27017/bookdb"
+
+frontend:
+  image: bisrat1/reactdemo-frontend:latest
+  replicas: 2
+  port: 80
+
+mongo:
+  image: mongo:6
+  port: 27017
+  pvcSize: 2Gi
+  replicas: 1
+
+secrets:
+  mongoUri: "your-mongo-uri"
+  jwtSecrets: "your-jwt-secret"
+
+ingress:
+  host: demo.local
+  apipath: /api
+  frontendpath: /
