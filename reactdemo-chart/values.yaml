@@ -1,13 +1,13 @@
 nameSpace: demo
 
 backend:
-  image: bisrat1/reactdemo-backend:latest
+  image: bisrat1/reactdemo-backend:v11
   replicas: 2
   port: 8000
   MONGO_URI: "mongodb://mongo:27017/bookdb"
 
 frontend:
-  image: bisrat1/reactdemo-frontend:latest
+  image: bisrat1/reactdemo-frontend:v12
   replicas: 2
   port: 80
 
@@ -25,3 +25,4 @@ ingress:
   host: demo.local
   apipath: /api
   frontendpath: /
+

@@ -26,7 +26,7 @@ spec:
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: book-secret
+                  name: reactdemo-secret
                   key: JWT_SECRET
 ---
 
