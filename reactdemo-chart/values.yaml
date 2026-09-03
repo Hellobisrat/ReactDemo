@@ -1,7 +1,7 @@
 nameSpace: demo
 
 backend:
-  image: bisrat1/reactdemo-backend:v11
+  image: bisrat1/reactdemo-backend:v12
   replicas: 2
   port: 8000
   MONGO_URI: "mongodb://mongo:27017/bookdb"
@@ -19,7 +19,7 @@ mongo:
 
 secrets:
   mongoUri: "your-mongo-uri"
-  jwtSecrets: "your-jwt-secret"
+  jwtSecrets: "mysupersecretkey123"
 
 ingress:
   host: demo.local
