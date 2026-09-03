@@ -35,7 +35,9 @@ jobs:
           host: ${{ secrets.MINIKUBE_HOST }}
           username: ${{ secrets.MINIKUBE_USER }}
           key: ${{ secrets.MINIKUBE_SSH_KEY }}
+          debug: true
+          script_stop: true
           script: |
-            cd ~/reactdemo/infra
-            terraform init
-            terraform apply -auto-approve
+              cd ~/reactdemo/infra
+              terraform init
+              terraform apply -auto-approve
