@@ -19,7 +19,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-
       - name: Build backend image
         run: |
           docker build -t bisrat1/reactdemo-backend:latest ./backend
@@ -30,5 +29,13 @@ jobs:
           docker build -t bisrat1/reactdemo-frontend:latest ./frontend
           docker push bisrat1/reactdemo-frontend:latest
 
-      - name: Deployment notice
-        run: echo "Images pushed. Deploy manually using helm upgrade reactdemo ./reactdemo-chart -n demo"
+      - name: Deploy using Terraform
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.MINIKUBE_HOST }}
+          username: ${{ secrets.MINIKUBE_USER }}
+          key: ${{ secrets.MINIKUBE_SSH_KEY }}
+          script: |
+            cd ~/reactdemo/infra
+            terraform init
+            terraform apply -auto-approve
