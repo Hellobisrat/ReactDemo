@@ -29,15 +29,11 @@ jobs:
           docker build -t bisrat1/reactdemo-frontend:latest ./frontend
           docker push bisrat1/reactdemo-frontend:latest
 
-      - name: Deploy using Terraform
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.MINIKUBE_HOST }}
-          username: ${{ secrets.MINIKUBE_USER }}
-          key: ${{ secrets.MINIKUBE_SSH_KEY }}
-          debug: true
-          script_stop: true
-          script: |
-              cd ~/reactdemo/infra
-              terraform init
-              terraform apply -auto-approve
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+
+      - name: Terraform Init
+        run: terraform -chdir=infra init
+
+      - name: Terraform Apply
+        run: terraform -chdir=infra apply -auto-approve
